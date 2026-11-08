@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مهارت‌های عصر هوش مصنوعی | راهنمای ۲۰۲۶</title>
+  <meta name="description" content="در سال ۲۰۲۶ و در عصر هوش مصنوعی چه مهارت‌هایی را باید یاد بگیریم؟ دوازده مهارت کلیدی، و یک نقشه‌ی راه ۹۰ روزه.">
+  <meta property="og:title" content="مهارت‌های عصر هوش مصنوعی | راهنمای ۲۰۲۶">
+  <meta property="og:description" content="دوازده مهارت کلیدی برای ماندن در بازی کار در سال ۲۰۲۶، و یک نقشه‌ی راه ۹۰ روزه.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #121a33;
+      --card: #151f3d;
+      --line: rgba(255, 255, 255, 0.08);
+      --text: #e8ecf8;
+      --muted: #9aa6c8;
+      --accent: #7c5cff;
+      --accent-2: #22d3ee;
+      --warm: #f59e0b;
+      --good: #34d399;
+      --bad: #f87171;
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Vazirmatn", Tahoma, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.9;
+      font-size: 17px;
+      overflow-x: hidden;
+    }
+
+    .en { direction: ltr; unicode-bidi: isolate; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+
+    .container { width: min(1120px, 100% - 40px); margin-inline: auto; }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ---------- Nav ---------- */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(11, 16, 32, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+    nav .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-weight: 900; font-size: 18px; }
+    .logo span { color: var(--accent-2); }
+    nav ul { display: flex; gap: 28px; list-style: none; font-size: 15px; color: var(--muted); }
+    nav ul a:hover { color: var(--text); }
+
+    /* ---------- Hero ---------- */
+    .hero { position: relative; padding: 110px 0 90px; text-align: center; }
+    .hero::before {
+      content: ""; position: absolute; inset: -200px 0 auto; height: 700px; z-index: -1;
+      background:
+        radial-gradient(500px 300px at 70% 30%, rgba(124, 92, 255, 0.35), transparent 70%),
+        radial-gradient(420px 260px at 30% 50%, rgba(34, 211, 238, 0.22), transparent 70%);
+    }
+    .badge {
+      display: inline-block; padding: 6px 16px; border-radius: 999px;
+      border: 1px solid var(--line); background: var(--bg-soft);
+      color: var(--accent-2); font-size: 14px; font-weight: 500; margin-bottom: 26px;
+    }
+    .hero h1 { font-size: clamp(34px, 6vw, 64px); font-weight: 900; line-height: 1.35; margin-bottom: 22px; }
+    .gradient {
+      background: linear-gradient(90deg, var(--accent-2), var(--accent));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero p { max-width: 640px; margin: 0 auto 38px; color: var(--muted); font-size: 19px; }
+    .btn {
+      display: inline-block; padding: 14px 32px; border-radius: 14px; font-weight: 700;
+      background: linear-gradient(90deg, var(--accent), #5b8cff); color: #fff;
+      box-shadow: 0 10px 30px rgba(124, 92, 255, 0.35);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(124, 92, 255, 0.5); }
+
+    .stats { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; margin-top: 64px; }
+    .stat {
+      min-width: 170px; padding: 18px 22px; border-radius: 16px;
+      background: var(--bg-soft); border: 1px solid var(--line);
+    }
+    .stat b { display: block; font-size: 30px; font-weight: 900; color: var(--accent-2); }
+    .stat span { color: var(--muted); font-size: 14px; }
+
+    /* ---------- Sections ---------- */
+    section { padding: 80px 0; }
+    .section-head { text-align: center; margin-bottom: 52px; }
+    .section-head .kicker { color: var(--accent-2); font-weight: 700; font-size: 14px; letter-spacing: 0; }
+    .section-head h2 { font-size: clamp(26px, 4vw, 40px); font-weight: 900; margin: 8px 0 12px; }
+    .section-head p { color: var(--muted); max-width: 620px; margin-inline: auto; }
+
+    /* ---------- Why now ---------- */
+    .why {
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;
+      background: linear-gradient(135deg, var(--bg-soft), var(--card));
+      border: 1px solid var(--line); border-radius: 28px; padding: 48px;
+    }
+    .why h2 { font-size: 30px; font-weight: 900; margin-bottom: 16px; }
+    .why p { color: var(--muted); margin-bottom: 14px; }
+    .why blockquote {
+      border-right: 4px solid var(--accent); padding: 18px 22px;
+      background: rgba(124, 92, 255, 0.08); border-radius: 14px;
+      font-size: 20px; font-weight: 700; line-height: 1.8;
+    }
+
+    /* ---------- Skill groups ---------- */
+    .group { margin-bottom: 64px; }
+    .group-title { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+    .group-title .dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+    .group-title h3 { font-size: 24px; font-weight: 900; }
+    .group-title small { color: var(--muted); font-size: 15px; font-weight: 400; }
+
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+    .card {
+      position: relative; padding: 26px 22px 24px; border-radius: var(--radius);
+      background: var(--card); border: 1px solid var(--line);
+      transition: transform .25s ease, border-color .25s ease;
+    }
+    .card:hover { transform: translateY(-4px); border-color: var(--c); }
+    .card .num {
+      display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 12px;
+      font-weight: 900; font-size: 18px; margin-bottom: 16px;
+      color: var(--c); background: color-mix(in srgb, var(--c) 15%, transparent);
+    }
+    .card h4 { font-size: 18px; font-weight: 700; margin-bottom: 4px; line-height: 1.6; }
+    .card .sub { display: block; text-align: right; color: var(--c); font-size: 13px; margin-bottom: 10px; }
+    .card p { color: var(--muted); font-size: 15px; line-height: 1.85; }
+
+    .tech  { --c: var(--accent-2); }
+    .mind  { --c: var(--accent); }
+    .human { --c: var(--warm); }
+
+    /* ---------- Compare ---------- */
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .col { padding: 32px; border-radius: 24px; border: 1px solid var(--line); background: var(--bg-soft); }
+    .col h3 { font-size: 21px; font-weight: 900; margin-bottom: 18px; }
+    .col.down h3 { color: var(--bad); }
+    .col.up h3 { color: var(--good); }
+    .col ul { list-style: none; display: grid; gap: 12px; }
+    .col li { display: flex; gap: 12px; align-items: baseline; color: var(--text); }
+    .col li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; transform: translateY(-2px); }
+    .col.down li::before { background: var(--bad); }
+    .col.up li::before { background: var(--good); }
+
+    /* ---------- Roadmap ---------- */
+    .roadmap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; counter-reset: step; }
+    .step {
+      padding: 30px 26px; border-radius: 24px; background: var(--card); border: 1px solid var(--line);
+      position: relative; overflow: hidden;
+    }
+    .step::after {
+      counter-increment: step; content: counter(step, persian);
+      position: absolute; left: 18px; top: -10px; font-size: 110px; font-weight: 900;
+      color: rgba(255, 255, 255, 0.04); line-height: 1;
+    }
+    .step .when { color: var(--accent-2); font-weight: 700; font-size: 14px; }
+    .step h3 { font-size: 21px; font-weight: 900; margin: 6px 0 14px; }
+    .step ul { padding-right: 18px; color: var(--muted); font-size: 15px; display: grid; gap: 8px; }
+
+    /* ---------- CTA ---------- */
+    .cta {
+      text-align: center; padding: 64px 32px; border-radius: 32px;
+      background: linear-gradient(135deg, rgba(124, 92, 255, 0.25), rgba(34, 211, 238, 0.15));
+      border: 1px solid var(--line);
+    }
+    .cta h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 900; margin-bottom: 14px; }
+    .cta p { color: var(--muted); max-width: 560px; margin: 0 auto 30px; }
+
+    footer { padding: 36px 0; text-align: center; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 960px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .roadmap { grid-template-columns: 1fr; }
+      .why { grid-template-columns: 1fr; padding: 32px; }
+    }
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      nav ul { display: none; }
+      .hero { padding: 72px 0 60px; }
+      .grid, .compare { grid-template-columns: 1fr; }
+      section { padding: 56px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="#" class="logo">مهارت‌های <span>۲۰۲۶</span></a>
+      <ul>
+        <li><a href="#why">چرا الان؟</a></li>
+        <li><a href="#skills">مهارت‌ها</a></li>
+        <li><a href="#shift">چه چیزی عوض شد</a></li>
+        <li><a href="#roadmap">نقشه‌ی راه</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <span class="badge">راهنمای سال ۲۰۲۶</span>
+      <h1>در عصر <span class="gradient">هوش مصنوعی</span><br>چه چیزی یاد بگیریم؟</h1>
+      <p>هوش مصنوعی جای آدم‌ها را نمی‌گیرد. جای آدم‌هایی را می‌گیرد که بلد نیستند با آن کار کنند. این صفحه دوازده مهارتی را نشان می‌دهد که در این دوره ارزششان بیشتر شده است.</p>
+      <a href="#skills" class="btn">دیدن مهارت‌ها</a>
+
+      <div class="stats">
+        <div class="stat"><b>۱۲</b><span>مهارت کلیدی</span></div>
+        <div class="stat"><b>۳</b><span>دسته‌ی اصلی</span></div>
+        <div class="stat"><b>۹۰</b><span>روز تا شروع جدی</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="why">
+    <div class="container">
+      <div class="why">
+        <div>
+          <h2>چرا همین الان؟</h2>
+          <p>تا چند سال پیش، هوش مصنوعی ابزاری برای متخصص‌ها بود. امروز در ایمیل، اکسل، طراحی، برنامه‌نویسی و حتی پشتیبانی مشتری حضور دارد. ایجنت‌ها (<span class="en">AI Agents</span>) کارهای چندمرحله‌ای را خودشان انجام می‌دهند و سرعت کار تیم‌ها چند برابر شده است.</p>
+          <p>یعنی سؤال دیگر این نیست که «آیا از هوش مصنوعی استفاده کنم؟». سؤال این است که «چطور کنارش ارزشی بسازم که خودش به‌تنهایی نمی‌سازد؟»</p>
+        </div>
+        <blockquote>مهم‌ترین مهارت ۲۰۲۶ دانستن جواب‌ها نیست؛ دانستن این است که چه سؤالی بپرسی و جواب را چطور بسنجی.</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">دوازده مهارت</span>
+        <h2>مهارت‌هایی که باید یاد بگیری</h2>
+        <p>در سه دسته: مهارت‌هایی برای کار با ابزارها، مهارت‌های فکری، و مهارت‌های انسانی که ماشین نمی‌تواند جایشان را بگیرد.</p>
+      </div>
+
+      <div class="group">
+        <div class="group-title">
+          <span class="dot" style="background: var(--accent-2)"></span>
+          <h3>مهارت‌های فنی <small>کار کردن با ابزارها</small></h3>
+        </div>
+        <div class="grid">
+          <article class="card tech">
+            <span class="num">۱</span>
+            <h4>کار با دستیارها و ایجنت‌ها</h4>
+            <span class="sub en">AI Agents &amp; Assistants</span>
+            <p>تقسیم یک کار بزرگ به مرحله‌ها، سپردن آن به ایجنت، و بازبینی خروجی. مثل مدیریت یک همکار خیلی سریع.</p>
+          </article>
+          <article class="card tech">
+            <span class="num">۲</span>
+            <h4>پرامپت‌نویسی و مهندسی زمینه</h4>
+            <span class="sub en">Prompt &amp; Context Engineering</span>
+            <p>دادن نقش، هدف، مثال و اطلاعات درست به مدل. کیفیت خروجی مستقیماً به کیفیت ورودی تو بستگی دارد.</p>
+          </article>
+          <article class="card tech">
+            <span class="num">۳</span>
+            <h4>اتوماسیون کارهای تکراری</h4>
+            <span class="sub en">Automation</span>
+            <p>وصل کردن ابزارها به هم تا کارهای روزمره خودکار انجام شوند؛ با ابزارهای بدون کد یا چند خط اسکریپت.</p>
+          </article>
+          <article class="card tech">
+            <span class="num">۴</span>
+            <h4>سواد داده</h4>
+            <span class="sub en">Data Literacy</span>
+            <p>خواندن نمودار، فهمیدن اعداد، و تشخیص اینکه یک نتیجه‌گیری واقعاً از داده درمی‌آید یا نه.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">
+          <span class="dot" style="background: var(--accent)"></span>
+          <h3>مهارت‌های فکری <small>جایی که ارزش واقعی ساخته می‌شود</small></h3>
+        </div>
+        <div class="grid">
+          <article class="card mind">
+            <span class="num">۵</span>
+            <h4>تفکر انتقادی و راستی‌آزمایی</h4>
+            <span class="sub en">Critical Thinking</span>
+            <p>هوش مصنوعی با اعتمادبه‌نفس اشتباه می‌کند. کسی ارزشمند است که خطا را ببیند و منبع را چک کند.</p>
+          </article>
+          <article class="card mind">
+            <span class="num">۶</span>
+            <h4>حل مسئله و طراحی فرایند</h4>
+            <span class="sub en">Problem Solving</span>
+            <p>تعریف دقیق مسئله، شکستن آن به قدم‌ها، و تصمیم اینکه کدام قدم را آدم انجام دهد و کدام را ماشین.</p>
+          </article>
+          <article class="card mind">
+            <span class="num">۷</span>
+            <h4>یادگیری سریع و مداوم</h4>
+            <span class="sub en">Learning How to Learn</span>
+            <p>ابزارها هر چند ماه عوض می‌شوند. مهارت اصلی این است که چیز جدید را در چند روز یاد بگیری، نه چند ماه.</p>
+          </article>
+          <article class="card mind">
+            <span class="num">۸</span>
+            <h4>اخلاق، امنیت و حریم خصوصی</h4>
+            <span class="sub en">AI Ethics &amp; Safety</span>
+            <p>بدانی چه اطلاعاتی را نباید به مدل داد، سوگیری را کجا باید دید، و مسئولیت خروجی با کیست.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">
+          <span class="dot" style="background: var(--warm)"></span>
+          <h3>مهارت‌های انسانی <small>چیزی که ماشین ندارد</small></h3>
+        </div>
+        <div class="grid">
+          <article class="card human">
+            <span class="num">۹</span>
+            <h4>ارتباط و داستان‌گویی</h4>
+            <span class="sub en">Communication</span>
+            <p>وقتی همه می‌توانند متن تولید کنند، کسی دیده می‌شود که حرفش را روشن، کوتاه و تأثیرگذار بزند.</p>
+          </article>
+          <article class="card human">
+            <span class="num">۱۰</span>
+            <h4>هوش هیجانی و کار تیمی</h4>
+            <span class="sub en">Emotional Intelligence</span>
+            <p>همدلی، مذاکره، رهبری و حل اختلاف؛ کارهایی که اعتماد آدم‌ها را می‌سازند و قابل خودکارسازی نیستند.</p>
+          </article>
+          <article class="card human">
+            <span class="num">۱۱</span>
+            <h4>خلاقیت و سلیقه</h4>
+            <span class="sub en">Creativity &amp; Taste</span>
+            <p>هوش مصنوعی صد گزینه می‌سازد؛ انتخاب بهترین گزینه و جهت دادن به کار هنوز کار آدم است.</p>
+          </article>
+          <article class="card human">
+            <span class="num">۱۲</span>
+            <h4>برند شخصی</h4>
+            <span class="sub en">Personal Branding</span>
+            <p>در بازاری شلوغ، مردم با آدم‌هایی کار می‌کنند که می‌شناسند و به آن‌ها اعتماد دارند. دیده شدن یک مهارت است.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="shift">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">جابه‌جایی ارزش</span>
+        <h2>چه چیزی عوض شد؟</h2>
+        <p>بعضی کارها هنوز لازم‌اند، اما دیگر به‌تنهایی مزیت حساب نمی‌شوند.</p>
+      </div>
+      <div class="compare">
+        <div class="col down">
+          <h3>ارزشش کمتر می‌شود</h3>
+          <ul>
+            <li>حفظ کردن اطلاعات و فرمول‌ها</li>
+            <li>تایپ و تولید متن تکراری</li>
+            <li>ترجمه‌ی ساده و خلاصه‌نویسی</li>
+            <li>کارهای دستی و تکراری با اکسل</li>
+            <li>نوشتن کدهای ساده و قالبی</li>
+          </ul>
+        </div>
+        <div class="col up">
+          <h3>ارزشش بیشتر می‌شود</h3>
+          <ul>
+            <li>پرسیدن سؤال درست و تعریف مسئله</li>
+            <li>قضاوت و بازبینی خروجی هوش مصنوعی</li>
+            <li>ترکیب چند ابزار برای ساختن یک راه‌حل</li>
+            <li>ارتباط انسانی و جلب اعتماد</li>
+            <li>تصمیم‌گیری و پذیرفتن مسئولیت نتیجه</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmap">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">از کجا شروع کنم؟</span>
+        <h2>نقشه‌ی راه ۹۰ روزه</h2>
+        <p>لازم نیست همه‌چیز را با هم یاد بگیری. با یک برنامه‌ی سه‌مرحله‌ای شروع کن.</p>
+      </div>
+      <div class="roadmap">
+        <div class="step">
+          <span class="when">روز ۱ تا ۳۰</span>
+          <h3>آشنایی و عادت</h3>
+          <ul>
+            <li>هر روز یک کار واقعی‌ات را با یک دستیار هوش مصنوعی انجام بده</li>
+            <li>اصول پرامپت‌نویسی را یاد بگیر و تمرین کن</li>
+            <li>یک دفترچه از پرامپت‌هایی که خوب جواب داده‌اند بساز</li>
+          </ul>
+        </div>
+        <div class="step">
+          <span class="when">روز ۳۱ تا ۶۰</span>
+          <h3>عمیق شدن</h3>
+          <ul>
+            <li>یک کار تکراری در شغلت را خودکار کن</li>
+            <li>با یک ایجنت، یک پروژه‌ی کوچک چندمرحله‌ای بساز</li>
+            <li>روی یکی از مهارت‌های انسانی، مثل ارائه دادن، تمرکز کن</li>
+          </ul>
+        </div>
+        <div class="step">
+          <span class="when">روز ۶۱ تا ۹۰</span>
+          <h3>ساختن و نشان دادن</h3>
+          <ul>
+            <li>یک پروژه‌ی واقعی بساز که مشکل یک نفر را حل کند</li>
+            <li>مسیرت را در لینکدین یا اینستاگرام به اشتراک بگذار</li>
+            <li>نمونه‌کار جمع کن؛ نتیجه‌ها مهم‌تر از مدرک‌اند</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta">
+        <h2>آینده مال کسانی است که شروع می‌کنند</h2>
+        <p>از همین امروز یکی از این دوازده مهارت را انتخاب کن و اولین قدمش را بردار. یک قدم کوچک هر روز، در ۹۰ روز تو را به آدم دیگری تبدیل می‌کند.</p>
+        <a href="#skills" class="btn">انتخاب اولین مهارت</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">ساخته‌شده با <span class="en">HTML</span> و <span class="en">CSS</span> · منتشرشده روی <span class="en">GitHub Pages</span> · ۲۰۲۶</div>
+  </footer>
+
+</body>
+</html>
